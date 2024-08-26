@@ -60,9 +60,9 @@ The experiment can be run using Docker. Follow the steps below:
 
 1. **Build and Start the Docker Containers**:
 
-   ````bash
-   docker-compose up --build```
-   ````
+   ```bash
+   docker-compose up --build
+   ```
 
 This will start the Dask scheduler, worker, and client services.
 
@@ -70,11 +70,10 @@ This will start the Dask scheduler, worker, and client services.
 
    Once the containers are running, open a bash shell in the client container:
 
-   ````bash
-   docker exec -it dask-experiment-client-1 /bin/bash```
-   ````
+   ```bash
+   docker exec -it dask-experiment-client-1 /bin/bash
+   ```
 
-````
 3. **Navigate to the Project Directory**:
 
    Inside the container, navigate to the `/app` directory:
@@ -82,7 +81,7 @@ This will start the Dask scheduler, worker, and client services.
    ```bash
    cd /app
 
-````
+   ```
 
 4. **Run the Experiment**:
 
