@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  scheduler:
+    image: daskdev/dask:latest
+    platform: linux/amd64
+    command: dask-scheduler
+    ports:
+      - "8786:8786"
+      - "8787:8787"
+    volumes:
+      - .:/app
+  worker:
+    image: daskdev/dask:latest
+    platform: linux/amd64
+    command: dask-worker scheduler:8786
+    environment:
+      - DASK_SCHEDULER_ADDRESS=tcp://scheduler:8786
+    depends_on:
+      - scheduler
+    volumes:
+      - .:/app
+  client:
+    image: daskdev/dask:latest
+    platform: linux/amd64
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
