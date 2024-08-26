@@ -23,7 +23,7 @@ This repository contains a set of scripts and Docker configurations designed to 
 
 ## Project Structure
 
-````plaintext
+```plaintext
 dask-experiment/
 │
 ├── Dockerfile                    # Docker configuration for running Dask containers
@@ -32,6 +32,7 @@ dask-experiment/
 ├── no_dask.py                    # Script demonstrating the task without Dask
 ├── with_dask.py                  # Script demonstrating the task with Dask
 └── README.md                     # This README file
+```
 
 ## Getting Started
 
@@ -50,6 +51,7 @@ Clone this repository to your local machine:
 git clone https://github.com/yourusername/dask-experiment.git
 cd dask-experiment
 ```
+
 ## Usage
 
 ### Running the Experiment
@@ -58,8 +60,9 @@ The experiment can be run using Docker. Follow the steps below:
 
 1. **Build and Start the Docker Containers**:
 
-   ```bash
+   ````bash
    docker-compose up --build```
+   ````
 
 This will start the Dask scheduler, worker, and client services.
 
@@ -67,11 +70,11 @@ This will start the Dask scheduler, worker, and client services.
 
    Once the containers are running, open a bash shell in the client container:
 
-   ```bash
+   ````bash
    docker exec -it dask-experiment-client-1 /bin/bash```
+   ````
 
-
-```
+````
 3. **Navigate to the Project Directory**:
 
    Inside the container, navigate to the `/app` directory:
@@ -79,7 +82,7 @@ This will start the Dask scheduler, worker, and client services.
    ```bash
    cd /app
 
-```
+````
 
 4. **Run the Experiment**:
 
@@ -109,6 +112,7 @@ Based on the initial experiments:
 - **With Dask**: The task completed in approximately 38 seconds, with a warning about chunk size adjustments.
 
 **Key Insights**:
+
 - The overhead introduced by Dask may not be beneficial for smaller tasks or simpler operations.
 - Dask's true benefits are more likely to be realized with larger datasets or more complex workflows.
 
@@ -129,4 +133,6 @@ Contributions are welcome! If you have suggestions or improvements, feel free to
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-````
+```
+
+```
